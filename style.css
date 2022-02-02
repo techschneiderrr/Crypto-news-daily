@@ -1,3 +1,9 @@
+.head>h1{
+    text-align: center;
+    padding: 2%;
+    font-weight: 600;
+}
+
 .news{
     margin: 0% 2%;
     margin-top: 2%;
@@ -6,7 +12,8 @@
 .outer-flex{
     display:flex;
     justify-content: space-around;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
+    margin: 0% 2% 0% 3%; 
 }  
 
 .outer-flex>div>img{
@@ -32,6 +39,7 @@
     display:flex;
     flex-direction: column;
     align-items: space-around;
+    width: 31%;
 }
 
 .inner-flex>.cols-flex>p{
@@ -40,9 +48,32 @@
     font-size: 1.2em;
 }
 
+.extra{
+    margin-right:7%;
+}
+
 @media only screen and (max-width: 436px) {
     .outer-flex{
         justify-content: center;
+        margin-left: 0%;
+    }
+    .cols-flex{
+        display:flex;
+        flex-direction: column;
+        justify-content:  space-around;
+        width: 100%;
+    }
+    .inner-flex{
+        display:flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        flex-direction: column; 
+        padding:1%;
+        width: 100%;
+    }
+    .outer-flex>div>img{
+        width:5em;
+        padding: 30% 5%;
     }
     
   }
