@@ -14,6 +14,7 @@ coin =
         .catch(err => {
 	    console.error(err);
         })
+        this.greedIndex();
     },
     displayListings : function(data){
         for(let i=0;i<data.length;i++){
@@ -82,6 +83,27 @@ coin =
         </div>`);
         document.querySelector(".list-group").appendChild(list);
         document.querySelector(".head>h1").innerHTML = "Search Results";
+    },
+
+    greedIndex : function(){
+        fetch("https://crypto-ranking-data.p.rapidapi.com/fng", {
+	    "method": "GET",
+	    "headers": {
+		"x-rapidapi-host": "crypto-ranking-data.p.rapidapi.com",
+		"x-rapidapi-key": "30b15af647mshf7cbfaa918eb175p18d913jsn4189a1fab911"
+	    }
+        })
+        .then(response => response.json())
+        .then(data => this.displayFear(data))
+        .catch(err => {
+	    console.error(err);
+        })
+    },
+    
+    displayFear : function(data){
+        const {value, value_classification} = data;
+        document.querySelector("#meter-value").value = value;
+        document.querySelector(".classifier").innerHTML = value_classification;
     }
 
 }
@@ -99,6 +121,7 @@ document.querySelector(".search").addEventListener("keyup",function(e){
 
 const searchBar = document.querySelector(".search").addEventListener("input",function(e){
     if(e.target.value == ""){
+        document.querySelector(".list-group").innerHTML = "";
         coin.fetchListings();
         document.querySelector(".head>h1").innerHTML = "Top 20 Crypto Currencies";
     }

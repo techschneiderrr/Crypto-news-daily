@@ -3,6 +3,27 @@
     padding: 2%;
     font-weight: 600;
 }
+.index-out{
+    display: flex;
+    flex-direction: column;
+}
+
+.classifier{
+    text-align: center;
+    margin-top: 2%;
+}
+
+.index-in{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.index-in>meter{
+    width: 52%;
+    margin: 0% 2%;
+    height: 20px;
+}
+
 
 .news{
     margin: 0% 2%;
