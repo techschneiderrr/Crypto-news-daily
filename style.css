@@ -48,10 +48,6 @@
     font-size: 1.2em;
 }
 
-.extra{
-    margin-right:7%;
-}
-
 @media only screen and (max-width: 436px) {
     .outer-flex{
         justify-content: center;
